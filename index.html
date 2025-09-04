@@ -1,85 +1,535 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Pouria Pakdaman</title>
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body dir="rtl">
-   <div id="resume">
-      <h1>پوریا پاکدامن</h1>
-      <h3>=> برنامه نویس بک اند</h3>
-      <p>شماره تماس: <a href="#"> 09162887623 </a>
-      <p>وبسایت: <a href="https://pouria0015.github.io/"> pouria0015.io </a>
-      <p>ایمیل : <a href="mailto:pouria0015@gmail.com"> pouria0015@gmail.com </a>
-      <p>لینکدین : <a href="https://www.linkedin.com/in/pouria-packdaman/"> pouria packdaman </a>
-      <p>گیت هاب : <a href="https://github.com/pouria0015"> pouria0015 </a>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پوریا پاکدامن - برنامه نویس بک اند</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts - Vazirmatn for Persian -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6580 100%);
+            color: white;
+            padding: 60px 0 40px;
+            margin-bottom: 30px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6580 100%);
+        }
+        .tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6580 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        .contact-info {
+            margin-bottom: 10px;
+        }
+        .contact-info i {
+            width: 24px;
+            color: #2c3e50;
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-right: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            background-color: #2c3e50;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-right: 3px solid #2c3e50;
+        }
+        .timeline-date {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .project-card .card-img-top {
+            height: 180px;
+            object-fit: cover;
+        }
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6580 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+        }
+        .project-link:hover {
+            opacity: 0.9;
+            color: white;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6580 100%);
+            color: white;
+            border-radius: 50%;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6580 100%);
+        }
+        .nav-pills .nav-link {
+            color: #2c3e50;
+        }
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 0 30px;
+            }
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            .project-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- نوار ناوبری -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">پوریا پاکدامن</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">درباره من</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">پروژه‌ها</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">مهارت‌ها</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">تجربیات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">تحصیلات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">تماس</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-      <p id="objective">
-                     سلام،من پوریا پاکدامن هستم یک برنامه نویس بک اند که با زبان برنامه نویسی  php و فریمورک  laravel برنامه نویسی میکنم  ،  به بحث برنامه نویسی سمت سرور و شبکه  علاقه زیادی دارم و همیشه سعی میکنم به یادگیری این مسايل بپردازم و هر روز با تمرین  و مطالعه ،بهتر از روز قبل بشوم.
-    <dl>
-      <dt>تحصیلات
-      <dd>
-        <h2>دیپلم</h2>
-        <p><strong> رشته تحصیلی : </strong> شبکه و نرم افزار <br/>
-          <h2> فوق دیپلم (در حال تحصیل) </h2>
-        <p><strong> رشته تحصیلی : </strong> IT <br/>
-    </dl>
-    <dl>
-    <dt> مهارت های من
-    <dd>
-    <h2> مهارت های کار با کامپیوتر </h2>
-    <p>
-      آشنایی با نرم افزار ها و سیستم عامل های:
+    <!-- هدر -->
+    <header class="header text-center">
+        <div class="container">
+            <img src="./images/img.jpg" alt="عکس پروفایل پوریا پاکدامن" class="profile-img rounded-circle mb-3">
+            <h1 class="display-5 fw-bold mb-2">پوریا پاکدامن</h1>
+            <p class="lead mb-4">برنامه نویس بک اند | PHP و Laravel</p>
+            <div class="d-flex justify-content-center flex-wrap">
+                <div class="contact-info d-flex align-items-center mx-3">
+                    <i class="bi bi-phone-fill me-2"></i>
+                    <a href="tel:09162887623" class="text-white">09162887623</a>
+                </div>
+                <div class="contact-info d-flex align-items-center mx-3">
+                    <i class="bi bi-envelope-fill me-2"></i>
+                    <a href="mailto:pouria0015@gmail.com" class="text-white">pouria0015@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <div class="tag">#Linux</div>
-        <div class="tag">#windows server</div>
-        <div class="tag">#windows</div>
+    <!-- بخش اصلی -->
+    <main class="container py-5">
+        <div class="row">
+            <!-- سایدبار -->
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="section-title">اطلاعات تماس</h5>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-globe me-2"></i>
+                                <a href="https://pouria0015.github.io/" target="_blank">pouria0015.github.io</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-linkedin me-2"></i>
+                                <a href="https://www.linkedin.com/in/pouria-packdaman/" target="_blank">pouria-packdaman</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-github me-2"></i>
+                                <a href="https://github.com/pouria0015" target="_blank">pouria0015</a>
+                            </div>
+                        </div>
 
-      <h2 style="margin-top:120px"> مهارت ها در حوزه برنامه نویسی </h2>
-    <p>
-      اشنایی با زبان ها و تکنولوژی های:
-      <br>
+                        <h5 class="section-title mt-4">سرگرمی‌ها</h5>
+                        <p>مطالعه کتاب، ورزش</p>
 
-        <div class="tag">#php</div>
-        <div class="tag">#laravel</div>
-        <div class="tag">#html & css</div>
-        <div class="tag">#bootstrap</div>
-        <div class="tag">#bash script</div>
-        <div class="tag">#network+</div>
-        <div class="tag">#git & github</div>
+                        <h5 class="section-title mt-4">لینک‌های مستقیم</h5>
+                        <div class="d-flex justify-content-around mt-3">
+                            <a href="https://github.com/pouria0015" class="social-icon">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/pouria-packdaman/" class="social-icon">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="mailto:pouria0015@gmail.com" class="social-icon">
+                                <i class="bi bi-envelope-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    </dl>
-    <dl>
-    <dt>تجربیات
-    <dd>
+            <!-- محتوای اصلی -->
+            <div class="col-lg-8">
+                <!-- درباره من -->
+                <section id="about" class="mb-5">
+                    <h2 class="section-title">درباره من</h2>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">
+                                سلام، من پوریا پاکدامن هستم، یک برنامه نویس بک اند که با زبان برنامه نویسی PHP و فریمورک Laravel برنامه نویسی می‌کنم. به بحث برنامه نویسی سمت سرور و شبکه علاقه زیادی دارم و همیشه سعی می‌کنم به یادگیری این مسائل بپردازم و هر روز با تمرین و مطالعه، بهتر از روز قبل بشوم.
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
-    <h2>توسعه چند پروژه برای تمرین <span>در سال 1401/1402</span></h2>
+                <!-- پروژه‌ها -->
+                <section id="projects" class="mb-5">
+                    <h2 class="section-title">پروژه‌های من</h2>
+                    <div class="row">
+                        <!-- پروژه مدیریت املاک -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card project-card shadow-sm">
+                                <img src="images/post1.png" class="card-img-top" alt="پروژه مدیریت املاک">
+                                <div class="card-body">
+                                    <h5 class="card-title">سیستم مدیریت املاک</h5>
+                                    <p class="card-text">پروژه مدیریت املاک با PHP (نقش: برنامه نویس بک اند)</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/pouria0015" class="project-link github-link" >
+                                            <i class="bi bi-github me-1"></i> کد GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- پروژه خانه بازی -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card project-card shadow-sm">
+                                <img src="./images/1.jpg" class="card-img-top" alt="پروژه خانه بازی" id="image">
+                                <div class="card-body">
+                                    <h5 class="card-title">مدیریت خانه بازی وروجک‌ها</h5>
+                                    <p class="card-text">سیستم مدیریت با PHP خام</p>
+                                    <div class="project-links">
+                                        <a href="images/1.jpg" class="project-link">
+                                            <i class="bi bi-eye-fill me-1"></i> مشاهده دمو
+                                        </a>
+                                        <a href="https://github.com/pouria0015" class="project-link">
+                                            <i class="bi bi-github me-1"></i> کد GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- پروژه Crypto Card -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card project-card shadow-sm">
+                                <img src="./images/6.png" class="card-img-top" alt="پروژه Crypto Card" id="image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Crypto Card</h5>
+                                    <p class="card-text">نمایش قیمت ارزهای دیجیتال با PHP و معماری MVC</p>
+                                    <div class="project-links">
+                                        <a href="http://crypto.freehost.io/" target="_blank" class="project-link">
+                                            <i class="bi bi-eye-fill me-1"></i> مشاهده دمو
+                                        </a>
+                                        <a href="https://github.com/pouria0015" target="_blank" class="project-link">
+                                            <i class="bi bi-github me-1"></i> کد GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- پروژه TodoList -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card project-card shadow-sm">
+                                <img src="./images/2.png" class="card-img-top" alt="پروژه TodoList" id="image">
+                                <div class="card-body">
+                                    <h5 class="card-title">TodoList</h5>
+                                    <p class="card-text">برنامه مدیریت وظایف با Laravel</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/pouria0015/TodoList" target="_blank" class="project-link">
+                                            <i class="bi bi-github me-1"></i> کد GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- پروژه وبلاگ ونوس -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card project-card shadow-sm">
+                                <img src="./images/5.png" class="card-img-top" alt="پروژه وبلاگ ونوس" id="image">
+                                <div class="card-body">
+                                    <h5 class="card-title">وبلاگ ونوس</h5>
+                                    <p class="card-text">سیستم وبلاگ‌نویسی با PHP</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/pouria0015/venus-weblog" target="_blank" class="project-link">
+                                            <i class="bi bi-github me-1"></i> کد GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- پروژه قالب‌های وب -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card project-card shadow-sm">
+                                <img src="./images/4.png" class="card-img-top" alt="پروژه قالب‌های وب" id="image">
+                                <div class="card-body">
+                                    <h5 class="card-title">قالب‌های وبسایت</h5>
+                                    <p class="card-text">مجموعه قالب‌های طراحی شده با HTML, CSS, Bootstrap</p>
+                                    <div class="project-links">
+                                        <a href="https://github.com/pouria0015/Web-Templates" target="_blank" class="project-link">
+                                            <i class="bi bi-github me-1"></i> کد GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <ul>
-    <li> اولین پروژه ها چند قالب وبسایت با  html,css,bootstrap که در این <a href="https://github.com/pouria0015/Web-Templates">آدرس</a> میتوانید مشاهه کنید.
-    <li>پروژه وبلاگ ونوس که با php توسعه دادم ، در <a href="https://github.com/pouria0015/venus-weblog"> اینجا </a> میتوانید مشاهده کنید.
-    </ul>
+                <!-- مهارت‌ها -->
+                <section id="skills" class="mb-5">
+                    <h2 class="section-title">مهارت‌های من</h2>
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="mb-3">مهارت‌های برنامه نویسی</h5>
+                            <div>
+                                <span class="tag">#PHP</span>
+                                <span class="tag">#Laravel</span>
+                                <span class="tag">#HTML & CSS</span>
+                                <span class="tag">#Bootstrap</span>
+                                <span class="tag">#Bash Script</span>
+                                <span class="tag">#Network+</span>
+                                <span class="tag">#Git & GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="mb-3">مهارت‌های کار با کامپیوتر</h5>
+                            <div>
+                                <span class="tag">#Linux</span>
+                                <span class="tag">#Windows Server</span>
+                                <span class="tag">#Windows</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <h2> ایجاد چند پروژه شخصی در دنیای واقعی <span> در سال 1403/1404 </span></h2>
+                <!-- تجربیات -->
+                <section id="experience" class="mb-5">
+                    <h2 class="section-title">تجربیات کاری</h2>
+                    <div class="timeline">
+                        <!-- پروژه 1404-1405 -->
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-date">1404-1405</span>
+                                <h5>توسعه پروژه‌های خصوصی</h5>
+                                <ul class="mb-0">
+                                    <li>توسعه پروژه مدیریت خانه بازی وروجک‌ها با PHP خام</li>
+                                    <li>توسعه پروژه مدیریت املاکی با PHP (به عنوان برنامه نویس بک اند)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- پروژه 1403-1404 -->
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-date">1403-1404</span>
+                                <h5>ایجاد پروژه‌های شخصی</h5>
+                                <ul class="mb-0">
+                                    <li>پروژه Crypto Card جهت نمایش قیمت ارزهای دیجیتال با PHP و معماری MVC</li>
+                                    <li>پروژه TodoList با فریمورک Laravel</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- پروژه 1401-1402 -->
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-date">1401-1402</span>
+                                <h5>توسعه پروژه‌های تمرینی</h5>
+                                <ul class="mb-0">
+                                    <li>توسعه قالب‌های وبسایت با HTML, CSS, Bootstrap</li>
+                                    <li>پروژه وبلاگ ونوس با PHP</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <ul>
-      <li> پروژه Crypto Card بود که جهت نمایش قیمت ارزهای دیجیتال با کمک  api وبسایت coinmarketcap انجام شد که در اینجا می توانید<a href="http://crypto.freehost.io/"> مشاهد  </a>کنید، که این مورد هم با زبان برنامه نویسی  php و معماری  mvc  توسعه دادم. </li>
-    </ul>
-    <ul>
-      <li> پروژه ثبت وظایف یا TodoList که با لاراول توسعه داده ام،می توانید جهت مشاهده پروژه و دسترسی به آن به <a href="https://github.com/pouria0015/TodoList">این آدرس</a> مراجعه کنید. </li>
-    </ul>
-    <ul> 
-      <li>توسعه پروژه مدیریت خانه بازی وروجک ها با php خام</li>
-    </ul>
+                <!-- تحصیلات -->
+                <section id="education" class="mb-5">
+                    <h2 class="section-title">تحصیلات</h2>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5>فوق دیپلم IT</h5>
+                                    <p class="mb-0">در حال تحصیل</p>
+                                </div>
+                                <div class="text-muted">تاکنون</div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5>دیپلم شبکه و نرم افزار</h5>
+                                    <p class="mb-0">رشته تحصیلی: شبکه و نرم افزار</p>
+                                </div>
+                                <div class="text-muted"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    </dd>
-    </dl>
-    <dl>
-    <dt>سرگرمی ها
-    <dd style="padding:10px 10px 0 0;">مطالعه کتاب ،ورزش
-    </dl>
-  </div>
+                <!-- تماس -->
+                <section id="contact">
+                    <h2 class="section-title">تماس با من</h2>
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body">
+                            <p>برای تماس با من می‌توانید از طریق اطلاعات زیر اقدام کنید:</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-telephone-fill text-primary me-2"></i>
+                                        <a href="tel:09162887623">09162887623</a>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                        <a href="mailto:pouria0015@gmail.com">pouria0015@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-github text-primary me-2"></i>
+                                        <a href="https://github.com/pouria0015" target="_blank">GitHub/pouria0015</a>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-linkedin text-primary me-2"></i>
+                                        <a href="https://www.linkedin.com/in/pouria-packdaman/" target="_blank">LinkedIn/pouria-packdaman</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
 
-  </body>
+    <!-- پاورقی -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 1403 - پوریا پاکدامن. کلیه حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+          // باز کردن عکس در صفحه جدید با کلیک
+        document.getElementById('image').addEventListener('click', function() {
+            window.open(this.src, '_blank');
+        });
+
+    </script>
+    
+    
+</body>
 </html>
